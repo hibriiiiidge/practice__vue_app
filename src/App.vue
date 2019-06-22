@@ -1,7 +1,7 @@
 <template>
   <div>
     {{ message }}
-    <button v-on:click="cMessage">Click</button>
+    <input v-model="message">
   </div>
 </template>
 
@@ -10,11 +10,6 @@ export default {
   data () {
     return {
       message: 'Hello Vue.js!'
-    }
-  },
-  methods: {
-    cMessage: function () {
-      this.message = this.message.split('').reverse().join('')
     }
   }
 }
