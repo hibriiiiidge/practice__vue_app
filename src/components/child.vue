@@ -1,9 +1,9 @@
 <template>
   <div>
     child start
-    <ul v-for="(grocery, index) in groceryList" :key='index'>
+    <ul v-for="value in object">
       <li>
-        {{ grocery.id }}: {{ grocery.text }}
+        {{ value }}
       </li>
     </ul>
     child end
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  props: ['groceryList'],
+  props: ['object'],
   created: function() {
     this.$parent.message = 'Change parent message!!'
   }

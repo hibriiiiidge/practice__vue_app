@@ -1,6 +1,6 @@
 <template>
   <div>
-    <child :groceryList="groceryList"></child>
+    <child :object="object"></child>
     <div> {{ message }} </div>
     <div v-bind:class="{ active: isActive }"> {{ message2 }} </div>
     <button v-on:click="reverse">Reverse</button>
@@ -19,11 +19,11 @@ export default {
       message: 'Hello Vue!!',
       message2: '12345',
       isActive: false,
-      groceryList: [
-        { id: 0, text: 'Vegetables' },
-        { id: 1, text: 'Cheese' },
-        { id: 2, text: 'Whatever else humans are supposed to eat' }
-      ]
+      object: {
+        title: 'How to do lists in Vue',
+        author: 'Jane Doe',
+        publishedAt: '2016-04-10'
+      }
     }
   },
   methods: {
