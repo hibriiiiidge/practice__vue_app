@@ -2,7 +2,7 @@
   <div>
     <child :groceryList="groceryList"></child>
     <div> {{ message }} </div>
-    <div> {{ message2 }} </div>
+    <div v-bind:class="{ active: isActive }"> {{ message2 }} </div>
     <button v-on:click="reverse">Reverse</button>
   </div>
 </template>
@@ -18,6 +18,7 @@ export default {
     return {
       message: 'Hello Vue!!',
       message2: '12345',
+      isActive: false,
       groceryList: [
         { id: 0, text: 'Vegetables' },
         { id: 1, text: 'Cheese' },
