@@ -1,10 +1,7 @@
 <template>
   <div>
-    <ol>
-      <li v-for="todo in todos">
-        {{ todo.text }}
-      </li>
-    </ol>
+    {{ message }}
+    <button v-on:click="cMessage">Click</button>
   </div>
 </template>
 
@@ -12,11 +9,12 @@
 export default {
   data () {
     return {
-      todos: [
-        { text: 'hoge' },
-        { text: 'hoge2' },
-        { text: 'hoge3' },
-      ]
+      message: 'Hello Vue.js!'
+    }
+  },
+  methods: {
+    cMessage: function () {
+      this.message = this.message.split('').reverse().join('')
     }
   }
 }
