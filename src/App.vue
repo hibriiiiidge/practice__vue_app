@@ -1,6 +1,10 @@
 <template>
   <div>
-    <span v-if="seen">Now you see me</span>
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
   </div>
 </template>
 
@@ -8,7 +12,11 @@
 export default {
   data () {
     return {
-      seen: false
+      todos: [
+        { text: 'hoge' },
+        { text: 'hoge2' },
+        { text: 'hoge3' },
+      ]
     }
   }
 }
