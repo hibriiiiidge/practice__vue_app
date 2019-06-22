@@ -3,7 +3,7 @@
     <child :groceryList="groceryList"></child>
     <div> {{ message }} </div>
     <div> {{ message2 }} </div>
-    <button @click="reverse()">Reverse</button>
+    <button v-on:click="reverse">Reverse</button>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
     }
   },
   methods: {
-    reverse() {
+    reverse: function() {
       this.message2 = this.message2.split("").reverse().join("");
     }
   }
