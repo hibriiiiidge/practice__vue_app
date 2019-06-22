@@ -1,9 +1,9 @@
 <template>
   <div>
     child start
-    <ul v-for="value in object">
+    <ul v-for="(value, key) in object">
       <li>
-        {{ value }}
+        {{ key }} : {{ value }}
       </li>
     </ul>
     child end
