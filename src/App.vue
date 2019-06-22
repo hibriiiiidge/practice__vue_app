@@ -1,6 +1,7 @@
 <template>
   <div>
     <child :groceryList="groceryList"></child>
+    <div> {{ message }} </div>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ export default {
   },
   data () {
     return {
+      message: 'Hello Vue!!',
       groceryList: [
         { id: 0, text: 'Vegetables' },
         { id: 1, text: 'Cheese' },

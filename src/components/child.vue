@@ -12,6 +12,9 @@
 
 <script>
 export default {
-  props: ['groceryList']
+  props: ['groceryList'],
+  created: function() {
+    this.$parent.message = 'Change parent message!!'
+  }
 }
 </script>
