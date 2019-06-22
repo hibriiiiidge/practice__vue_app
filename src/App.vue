@@ -1,44 +1,18 @@
 <template>
-  <div id="app">
-    <myheader></myheader>
-    <p v-if="message.length > 0">
-      {{ message }}
-    </p>
-    <p v-else>
-      NO TEXT!!!
-    </p>
-    <input type="text" v-model="message">
-    <button @click="clear()">Clear</button>
+  <div>
+    <span v-bind:title="message">
+      Hover your mouse over me for a few seconds
+      to see my dynamically bound title!
+    </span>
   </div>
 </template>
 
 <script>
-import myheader from './components/myheader'
-
 export default {
-  components: {
-    myheader
-  },
   data () {
     return {
-      message: 'Hello World!'
-    }
-  },
-  methods: {
-    clear() {
-      this.message = ''
+      message: 'You loaded this page on ' + new Date().toLocaleString()
     }
   }
 }
 </script>
-
-<style>
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
-</style>
