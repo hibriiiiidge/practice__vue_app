@@ -1,9 +1,9 @@
 <template>
   <div>
     child start
-    <ul v-for="todo in groceryList">
+    <ul v-for="(grocery, index) in groceryList" :key='index'>
       <li>
-        {{ todo.id }}: {{ todo.text }}
+        {{ grocery.id }}: {{ grocery.text }}
       </li>
     </ul>
     child end
