@@ -4,25 +4,28 @@
     <div> {{ message }} </div>
     <div v-bind:class="{ active: isActive }"> {{ message2 }} </div>
     <button v-on:click="reverse">Reverse</button>
-    <div class="static" v-bind:class="classObject"></div>
+    <div v-bind:class="[ { active: isActive }, errorClass]"></div>
+    <count_button></count_button>
+    <count_button></count_button>
+    <count_button></count_button>
   </div>
 </template>
 
 <script>
 import child from './components/child'
+import count_button from './components/CountButton'
 
 export default {
   components: {
-    child
+    child,
+    count_button
   },
   data () {
     return {
       message: 'Hello Vue!!',
       message2: '12345',
-      isActive: true,
-      error: {
-        type: 'fatal',
-      },
+      isActive: 'active',
+      errorClass: 'text-danger',
       object: {
         title: 'How to do lists in Vue',
         author: 'Jane Doe',
