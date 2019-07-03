@@ -1,5 +1,6 @@
 <template>
   <div>
+    <todo></todo>
     <child :object="object"></child>
     <div> {{ message }} </div>
     <div v-bind:class="{ active: isActive }"> {{ message2 }} </div>
@@ -29,11 +30,13 @@
 <script>
 import child from './components/child'
 import count_button from './components/CountButton'
+import todo from './components/todo'
 
 export default {
   components: {
     child,
-    count_button
+    count_button,
+    todo
   },
   data () {
     return {

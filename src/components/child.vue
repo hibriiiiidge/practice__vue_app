@@ -1,7 +1,7 @@
 <template>
   <div>
     child start
-    <ul v-for="(value, key) in object">
+    <ul v-for="(value, key) in object" v-bind:key="value.id">
       <template v-if="key==='authors'">
         <li>
           {{ key }} :
