@@ -2,9 +2,17 @@
   <div>
     child start
     <ul v-for="(value, key) in object">
-      <li>
-        {{ key }} : {{ value }}
-      </li>
+      <template v-if="key==='authors'">
+        <li>
+          {{ key }} :
+          <template v-for="(author) in value">
+            {{ author.name + ',' }}
+          </template>
+        </li>
+      </template>
+      <template v-else>
+        <li> {{ key }} : {{ value }}</li>
+      </template>
     </ul>
     child end
   </div>

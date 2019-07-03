@@ -8,6 +8,21 @@
     <count_button></count_button>
     <count_button></count_button>
     <count_button></count_button>
+    <h1 v-if="awesome">Vue is awesome!</h1>
+    <h1 v-else>Oh no 😢</h1>
+    <template v-if="loginType === 'username'">
+      <label>
+        Username
+      </label>
+      <input placeholder="username" key="username-input">
+    </template>
+    <template v-else>
+      <label>
+        Email
+      </label>
+      <input placeholder="email" key="username-email">
+    </template>
+    <button v-on:click="changeLoginType">ChangeLoginType</button>
   </div>
 </template>
 
@@ -26,10 +41,15 @@ export default {
       message2: '12345',
       isActive: 'active',
       errorClass: 'text-danger',
+      awesome: true,
+      loginType: false,
       object: {
         title: 'How to do lists in Vue',
-        author: 'Jane Doe',
-        publishedAt: '2016-04-10'
+        publishedAt: '2016-04-10',
+        authors: [
+          { name: 'Jane Doe' },
+          { name: 'Jane Doe2' },
+        ]
       }
     }
   },
@@ -44,6 +64,9 @@ export default {
   methods: {
     reverse: function() {
       this.message2 = this.message2.split("").reverse().join("");
+    },
+    changeLoginType: function(){
+      this.loginType = this.loginType === 'username' ? 'email' : 'username'
     }
   }
 }
